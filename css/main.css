@@ -1,0 +1,718 @@
+/* ================start global=============== */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+}
+a {
+  color: #000;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 1.5625rem;
+}
+.main-title h2 {
+  color: #7f7f90;
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+.main-title p {
+  font-size: 3.125rem;
+  font-family: "Amatic SC", cursive;
+}
+.main-title p span {
+  color: #ce1212;
+}
+/* ================ end global =============== */
+
+/* ================ start nav =============== */
+
+.nav {
+  padding-block: 1.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: #fff;
+  box-shadow: 0px 0px 14px 0px #0000001b;
+}
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .container ul {
+  display: flex;
+}
+.nav h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #212529;
+  font-family: "Open Sans", sans-serif;
+}
+.nav .container span {
+  color: #ce1212;
+}
+
+.nav ul a {
+  color: #7f7f90;
+  font-weight: 600;
+  margin-inline: 0.9375rem;
+  font-size: 1.0625rem;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  transition: color 1s;
+}
+.nav ul a:hover {
+  color: #000;
+}
+.nav ul a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 400ms;
+}
+.nav ul a:hover::before {
+  width: 100%;
+}
+    body:not(body:has(:target)) li .home,
+    body:has(#home:target) li .home,
+    body:has(#chefs:target) li .chefs,
+    body:has(#gallery:target) li .gallery,
+    body:has(#contact:target) li .contact {
+      color: #000;
+    }
+body:not(body:has(:target)) li .home::after,
+body:has(#home:target) li .home::after,
+body:has(#chefs:target) li .chefs::after,
+body:has(#gallery:target) li .gallery::after,
+body:has(#contact:target) li .contact::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+.nav .container i {
+  font-size: 1.5625rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.nav .menu-icon {
+  cursor: pointer;
+  font-size: 1.5625rem;
+  display: none;
+}
+/* ================ end nav =============== */
+/* ================ start home =============== */
+#home {
+  display: flex;
+  align-items: center;
+  background-color: #eeeeee;
+  min-height: 100vh;
+}
+
+#home .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5.9375rem;
+  padding-block: 1.25rem;
+}
+#home .home-info {
+  width: 40%;
+}
+#home .home-img {
+  width: 40%;
+}
+#home .home-info .home-text h2 {
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  font-size: 4.0625rem;
+  color: #37373f;
+}
+#home .home-info .home-text p {
+  font-family: "Open Sans", sans-serif;
+  line-height: 25.6px;
+  margin-block: 1.25rem;
+  color: #4f4f5a;
+}
+#home .home-info .home-btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+#home .home-info .video-btn a {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+#home .home-info a:hover {
+  color: #bc2020;
+}
+#home .home-info .video-btn a .icon {
+  width: 3.4375rem;
+  height: 3.4375rem;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right,
+    #cf0f0f 0 50%,
+    transparent 50% 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin-right: 0.3125rem;
+  position: relative;
+}
+#home .home-info .video-btn a .icon::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+#home .home-info .video-btn a .icon i {
+  z-index: 5;
+}
+#home .home-info .book-btn a {
+  padding: 0.725rem 1.5625rem;
+  font-size: 0.9375rem;
+  background-color: #cf0f0f;
+  color: #fff;
+  border-radius: 0 100vh 100vh;
+}
+#home .home-info .book-btn a:hover {
+  background-color: #e52b2b;
+}
+/* #home .home-img {
+  animation: shake 400ms infinite;
+  animation-play-state: paused;
+} */
+
+/* @keyframes shake {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-3deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(3deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-3deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+#home .home-img:hover {
+  animation-play-state: running;
+}
+#home .home-img img {
+  filter: drop-shadow(0 0 5px #000);
+} */
+
+/* ================== end home ================== */
+/* ================== start chefs ================== */
+#chefs {
+  padding: 5rem 0;
+}
+#chefs .chefs-cards .card {
+  width: 32%;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: scale 400ms;
+  /* box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1); */
+}
+#chefs .chefs-cards .card:hover {
+  scale: 1.05;
+}
+
+#chefs .chefs-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.875rem 0;
+  padding-block: 1.25rem;
+}
+#chefs .chefs-cards .card .card-img {
+  width: 100%;
+  position: relative;
+}
+#chefs .chefs-cards .card .card-img:before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background-image: url(../images/wave.svg);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 3.9rem;
+  color: #fff;
+}
+#chefs .chefs-cards .card-content span {
+  color: #7f7f90;
+  font-size: 0.875rem;
+  margin-block: 0.3125rem 0.625rem;
+  display: inline-block;
+}
+#chefs .chefs-cards .card p {
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: #7f7f90;
+}
+
+.chefs-cards .card-content {
+  padding: 1.5625rem;
+  padding-top: 0.625rem;
+}
+.chefs-cards .card .social-box {
+  background-color: RGBA(255, 255, 255, 0.3);
+  width: fit-content;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  position: absolute;
+  top: 1.875rem;
+  right: -3.125rem;
+  transition: right 1s 400ms;
+}
+.chefs-cards .card:hover .social-box {
+  right: 1rem;
+}
+.chefs-cards .social-box i {
+  font-size: 1.125rem;
+  padding: 0.625rem 0.3125rem;
+  color: #7f7f90;
+  transition: color 0.5s;
+}
+.chefs-cards .social-box i:hover {
+  color: #000;
+}
+/* ================== end chefs ================== */
+/* ================== start gallery ================== */
+#gallery {
+  background-color: #eeeeee;
+  padding: 5rem 0;
+}
+#gallery .container .gallery-photos {
+  /* columns: 3 15.625rem; */
+
+display: flex;
+flex-wrap: wrap;
+  /* gap: 0.9375rem; */
+  
+}
+
+
+#gallery .container .gallery-photos img {
+  transition: 0.5s;
+  width: 100%;
+  display: block;
+}
+
+
+.gallery-photos .item{
+  padding: 10px;
+  width: 33.33333%;
+}
+.gallery-photos .picture {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.625rem;
+  
+  border: 5px solid #fff;
+
+  /* padding: 10px 10px; */
+}
+
+
+
+
+.gallery-photos .picture .layer {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.9375rem;
+  background-color: #00000096;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: top 0.5s;
+  opacity: 0.5;
+}
+.gallery-photos .picture:hover .layer {
+  top: 0;
+  opacity: 1;
+}
+.gallery-photos .picture:hover img {
+  scale: 1.2;
+}
+.gallery-photos .picture .layer p {
+  color: #ddd;
+  text-align: center;
+}
+/* ==================== end gallery ================= */
+/* ==================== start contact ================= */
+#contact {
+  padding: 5rem 0;
+  background-color: #fdfdfd;
+}
+#contact .container iframe {
+  width: 100%;
+  height: 21.875rem;
+}
+#contact .container .details {
+  display: flex;
+  flex-wrap: wrap;
+  margin-block: 1.5625rem;
+  justify-content: space-between;
+  row-gap: 0.9375rem;
+}
+#contact .container .details > div {
+  width: 49%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1.5625rem;
+}
+#contact .container .details .icon {
+  min-width: 3.125rem;
+  min-height: 3.125rem;
+  background-color: #ce1212;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+#contact .container .details .icon i {
+  color: #fff;
+  font-size: 1.125rem;
+}
+#contact .container .details > div h3 {
+  color: #7d7d7d;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+#contact .container form {
+  row-gap: 0.9375rem;
+  background-color: #fff;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 1.875rem #00000014;
+}
+#contact .container form > * {
+  width: 100%;
+}
+#contact .container form .input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#contact form .input-group input {
+  width: 49%;
+}
+#contact form input,
+#contact form textarea {
+  padding: 0.9375rem 0.9375rem;
+  font-family: inherit;
+  line-height: 1.5;
+  border: 2px solid #e8e3e3;
+  color: #212529;
+  transition: border-color 0.5s;
+  outline: none;
+}
+#contact form input:focus,
+#contact form textarea:focus {
+  border-color: #bc2020;
+}
+#contact form textarea {
+  min-height: 9.375rem;
+  max-height: 18.75rem;
+  resize: vertical;
+}
+
+#contact form .form-btn {
+  font-size: 0.9375rem;
+  padding: 0.75rem 2.5rem;
+  margin-top: 1.5625rem;
+  width: fit-content;
+  font-family: inherit;
+  background-color: #da1818;
+  color: #fff;
+  border-radius: 100vh;
+  border: none;
+}
+#contact form .form-btn:hover {
+  background-color: #e61414;
+}
+/* ========================end contact=================== */
+/* =========================== start footer================== */
+footer {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0px -1px 5px #0007;
+  padding: 3.125rem 0;
+}
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer a {
+  color: #fff;
+}
+footer .container .about,
+footer .container .contact-details {
+  width: calc(calc(100% - 1.25rem * 2) / 4);
+}
+footer .container .subscription {
+  width: calc(calc(100% - 1.25rem * 2) / 2);
+}
+footer .container .about .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+footer .about img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+footer .about .logo h2 {
+  font-size: 1.875rem;
+}
+footer .about .logo span {
+  color: #ce1212;
+}
+footer .about p {
+  margin-block: 0.625rem;
+}
+footer .about h3 {
+  text-align: center;
+  padding: 0.625rem;
+  border-bottom: 2px solid #ddd6;
+  margin-bottom: 0.625rem;
+}
+footer .about .social-links {
+  padding: 0.625rem;
+  display: flex;
+  justify-content: space-around;
+}
+footer .about .social-links i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+footer .subscription-box p {
+  margin-block: 0.625rem;
+}
+footer .subscription-group {
+  margin-block: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+footer .subscription-group input {
+  flex-grow: 1;
+  padding: 0.625rem;
+}
+footer .subscription-group button {
+  font-size: 0.9375rem;
+  padding: 0.625rem;
+  background-color: #da1818;
+  color: #fff;
+  border: none;
+}
+footer .subscription-group button:hover {
+  background-color: #e61414;
+}
+footer .quick-links ul {
+  margin-top: 0.625rem;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.25rem;
+}
+footer .quick-links ul li {
+  width: 48%;
+  padding: 5px;
+  position: relative;
+  transition: transform 0.5s, background-color 0.5s;
+}
+footer .quick-links ul li:hover {
+  transform: translateX(10px);
+  background-color: #222222;
+}
+footer .quick-links ul li i {
+  content: "";
+  margin-right: 5px;
+}
+footer .contact-details h3 {
+  margin-bottom: 10px;
+}
+footer .contact-details ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+footer .contact-details ul li i {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ce1212;
+  font-size: 1.375rem;
+  cursor: pointer;
+}
+
+/* ============== media query ============= */
+
+@media screen and (max-width: 300px) {
+  :root {
+    font-size: 12px;
+  }
+}
+/*^================= Container ===================*/
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .nav .container ul {
+    display: none;
+  }
+  .nav .menu-icon {
+    display: inline-block;
+    margin-left: 30px;
+  }
+  footer .container .about,
+  footer .container .contact-details {
+    width: calc(calc(100% - 1.875rem) / 2);
+    order: 1;
+  }
+
+  footer .container .subscription {
+    width: 100%;
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+  #home .container {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  #home .container > * {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #home .home-info .book-btn a {
+    border-radius: 100vh;
+  }
+  #chefs .chefs-cards .card {
+    width: calc(calc(100% - 1.875rem) / 2);
+  }
+  #contact form .input-group {
+    row-gap: 16px;
+  }
+  #contact form .input-group input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+  #chefs .chefs-cards .card {
+    width: 100%;
+  }
+  #contact .container .details > div {
+    width: 100%;
+  }
+  footer .container .about,
+  footer .container .contact-details,
+  footer .container .subscription {
+    width: 100%;
+    order: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding-inline: 15px;
+  }
+  footer .subscription-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #home .home-info .home-btn {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+}
